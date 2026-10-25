@@ -1,0 +1,41 @@
+name: Add or change a package
+description: Suggest an AI package to add, or a tier change for one that's already listed.
+title: "[package] <package name>"
+labels: ["package"]
+body:
+  - type: input
+    id: package
+    attributes:
+      label: Package name
+      placeholder: com.example.ai.service
+    validations:
+      required: true
+  - type: input
+    id: phones
+    attributes:
+      label: Phones and Android versions it ships on
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What it does, and what stops working without it
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Suggested tier
+      options:
+        - safe (only AI features stop)
+        - caution (other features stop too)
+        - never (breaks the phone or core features)
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to UAD-ng, sysapps.bayton.org, vendor pages, forum threads or your own test. Entries without a source can't be added.
+    validations:
+      required: true

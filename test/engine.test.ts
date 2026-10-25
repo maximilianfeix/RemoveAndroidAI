@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { assertPackageName, parseDfFree, parseDiskstats } from "../src/core/device.js";
 import { apply, defaultSelection, formatBytes, newJournal, scan, undo, vendorMatches } from "../src/core/engine.js";
 import type { PackageEntry } from "../src/core/types.js";
-import { FakeDevice, GB, pixel } from "./fake-device.js";
+import { FakeDevice, GB, pixel } from "../src/core/simulated.js";
 
 const entry = (pkg: string, tier: PackageEntry["tier"], extra: Partial<PackageEntry> = {}): PackageEntry => ({
   vendor: "google",
@@ -147,5 +147,22 @@ describe("apply and undo", () => {
     const r = await apply(phone, journal, [{ entry: entry("com.example.ai.safe", "safe"), state: "enabled", sizeBytes: 0 }]);
     expect(r[0].ok).toBe(false);
     expect(journal.records).toHaveLength(0);
+  });
+});
+
+describe("demo phone", () => {
+  it("pre-selects AICore and frees about 7 GB, leaving caution and never alone", async () => {
+    const { demoPixel } = await import("../src/core/simulated.js");
+    const { default: realCatalog } = await import("../data/packages.json");
+    const phone = demoPixel();
+    const s = await scan(phone, "DEMO", realCatalog as PackageEntry[]);
+    const selected = defaultSelection(s.found, { includeCaution: false }).map((f) => f.entry.package);
+    expect(selected).toContain("com.google.android.aicore");
+    expect(selected).not.toContain("com.google.android.as");
+    expect(selected).not.toContain("com.android.settings.intelligence");
+    const before = phone.freeBytes;
+    await apply(phone, newJournal(s.device), defaultSelection(s.found, { includeCaution: false }));
+    expect(phone.freeBytes - before).toBeGreaterThan(7 * GB);
+    expect(phone.packages["com.android.settings"].enabled).toBe(true);
   });
 });

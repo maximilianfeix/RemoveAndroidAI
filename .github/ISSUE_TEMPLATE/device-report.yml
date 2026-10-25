@@ -1,0 +1,59 @@
+name: Device report
+description: Tell us how RemoveAndroidAI went on your phone. This is what moves packages from caution to safe.
+title: "[device] <phone model>, Android <version>"
+labels: ["device-report"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for trying it on a real phone. Every report makes the package list safer for the next person.
+  - type: input
+    id: model
+    attributes:
+      label: Phone model
+      placeholder: Pixel 9, Galaxy S25, Redmi Note 14, …
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version and skin
+      placeholder: Android 16, One UI 8, HyperOS 3, …
+    validations:
+      required: true
+  - type: dropdown
+    id: how
+    attributes:
+      label: How did you run it?
+      options:
+        - Web app (browser)
+        - CLI (npx)
+        - Through a coding agent
+    validations:
+      required: true
+  - type: input
+    id: freed
+    attributes:
+      label: Free space before → after
+      description: The CLI and web app print this line at the end.
+      placeholder: 41.3 GB → 48.4 GB
+  - type: textarea
+    id: packages
+    attributes:
+      label: Packages you turned off
+      description: Paste the ✓/✗ lines, or the output of `--json`.
+      render: text
+  - type: textarea
+    id: broke
+    attributes:
+      label: Did anything stop working that you didn't expect?
+      placeholder: '"Nothing" is a useful answer too.'
+    validations:
+      required: true
+  - type: dropdown
+    id: undo
+    attributes:
+      label: Did you use undo?
+      options:
+        - "No"
+        - Yes, and everything came back
+        - Yes, but something didn't come back (describe above)

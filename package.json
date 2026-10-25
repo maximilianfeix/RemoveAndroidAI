@@ -1,6 +1,6 @@
 {
   "name": "removeandroidai",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Turn off Gemini, AICore and Galaxy AI on your Android phone and get the storage back. Every step can be undone.",
   "license": "MIT",
   "type": "module",

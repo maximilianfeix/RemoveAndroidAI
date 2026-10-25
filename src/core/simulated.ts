@@ -1,4 +1,4 @@
-import type { Shell } from "../src/core/types.js";
+import type { Shell } from "./types.js";
 
 export interface FakePackage {
   enabled: boolean;
@@ -17,8 +17,12 @@ export class FakeDevice implements Shell {
     public freeBytes: number,
   ) {}
 
+  /** Milliseconds to wait per command, so the demo feels like a phone on a cable. */
+  delayMs = 0;
+
   async run(command: string): Promise<string> {
     this.log.push(command);
+    if (this.delayMs) await new Promise((r) => setTimeout(r, this.delayMs));
     const [cmd, ...args] = command.split(/\s+/);
     const pkgArg = args.at(-1) ?? "";
     const pkg = this.packages[pkgArg];
@@ -62,6 +66,37 @@ export class FakeDevice implements Shell {
 }
 
 export const GB = 1_000_000_000;
+
+/**
+ * The phone behind the web app's demo mode: a Pixel with the Google AI packages
+ * the catalog knows, sized like a real Pixel 9 with Gemini Nano downloaded.
+ */
+export function demoPixel(): FakeDevice {
+  const p = (codeGB: number, dataGB: number): FakePackage => ({ enabled: true, codeBytes: codeGB * GB, dataBytes: dataGB * GB });
+  return new FakeDevice(
+    {
+      "ro.product.manufacturer": "Google",
+      "ro.product.brand": "google",
+      "ro.product.model": "Pixel 9 (demo)",
+      "ro.build.version.release": "16",
+      "ro.build.version.sdk": "36",
+    },
+    {
+      "com.google.android.aicore": p(0.009, 7.1),
+      "com.google.android.apps.bard": p(0.21, 0.09),
+      "com.google.android.apps.googleassistant": p(0.002, 0.001),
+      "com.android.hotwordenrollment.okgoogle": p(0.001, 0),
+      "com.android.hotwordenrollment.xgoogle": p(0.001, 0),
+      "com.google.android.apps.pixel.creativeassistant": p(0.06, 0.41),
+      "com.google.android.apps.pixel.agent": p(0.05, 0.12),
+      "com.google.android.as": p(0.33, 0.52),
+      "com.google.android.as.oss": p(0.02, 0.01),
+      "com.android.settings.intelligence": p(0.01, 0.002),
+      "com.android.settings": p(0.1, 0.01),
+    },
+    41.3 * GB,
+  );
+}
 
 export function pixel(): FakeDevice {
   return new FakeDevice(

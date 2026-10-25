@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Try the demo first
+    url: https://maximilianfeix.github.io/RemoveAndroidAI/?demo
+    about: See what the web app does without connecting a phone.

@@ -4,6 +4,7 @@ import { AdbDaemonWebUsbDeviceManager } from "@yume-chan/adb-daemon-webusb";
 import catalogJson from "../data/packages.json";
 import { readFreeBytes } from "../src/core/device.js";
 import { apply, defaultSelection, formatBytes, newJournal, scan, undo, type Scan } from "../src/core/engine.js";
+import { demoPixel } from "../src/core/simulated.js";
 import type { FoundPackage, Journal, PackageEntry, Shell, StepResult } from "../src/core/types.js";
 
 const catalog = catalogJson as PackageEntry[];
@@ -11,6 +12,9 @@ const $ = <T extends HTMLElement>(sel: string) => document.querySelector<T>(sel)
 
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+
+/** `?demo` runs the whole flow against a simulated Pixel, so the page can be tried without a phone. */
+const demo = new URLSearchParams(location.search).has("demo");
 
 let adb: Adb | undefined;
 let shell: Shell | undefined;
@@ -56,7 +60,19 @@ function explainError(err: unknown): string {
   return msg;
 }
 
+async function connectDemo() {
+  const phone = demoPixel();
+  phone.delayMs = 120;
+  shell = phone;
+  setStatus("Looking for AI packages…");
+  current = await scan(shell, "DEMO", catalog);
+  setStatus("");
+  renderScan(current);
+  show("scan");
+}
+
 async function connect() {
+  if (demo) return connectDemo();
   if (!("usb" in navigator)) return;
   setStatus("");
   const manager = new AdbDaemonWebUsbDeviceManager(navigator.usb);
@@ -191,7 +207,10 @@ async function runUndo(journal: Journal) {
 }
 
 function init() {
-  if (!("usb" in navigator)) {
+  if (demo) {
+    $("#demo-banner").hidden = false;
+    $("#connect").textContent = "Connect demo phone";
+  } else if (!("usb" in navigator)) {
     $("#no-webusb").hidden = false;
     $<HTMLButtonElement>("#connect").disabled = true;
   }

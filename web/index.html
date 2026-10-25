@@ -20,6 +20,10 @@
     </header>
 
     <main>
+      <p id="demo-banner" class="status demo" hidden>
+        <b>Demo mode.</b> This is a simulated Pixel 9; nothing is connected and nothing changes on any phone.
+        <a href="./">Use a real phone</a>
+      </p>
       <section data-step="start">
         <h1>Turn off on-device AI.<br />Get your storage back.</h1>
         <p class="lead">
@@ -40,7 +44,10 @@
           <li><b>Click Connect</b>, pick your phone, then tap <i>Allow</i> on the phone.</li>
         </ol>
 
-        <button id="connect" class="primary">Connect phone</button>
+        <div class="actions">
+          <button id="connect" class="primary">Connect phone</button>
+          <a class="secondary" href="./?demo">No phone at hand? Try the demo</a>
+        </div>
         <p id="no-webusb" class="status error" hidden>
           This browser can't talk to USB devices. Use Chrome, Edge, Brave or Opera on a computer, or the
           command-line version: <code>npx github:maximilianfeix/RemoveAndroidAI</code>
@@ -75,6 +82,11 @@
           <a id="download-undo" class="secondary" hidden>Download undo file</a>
           <button id="rescan" class="secondary">Back to the list</button>
         </div>
+        <p class="fine">
+          Did it work on your phone? A short
+          <a href="https://github.com/maximilianfeix/RemoveAndroidAI/issues/new?template=device-report.yml" target="_blank" rel="noopener">device report</a>
+          (model, Android version, space freed, anything that stopped working) helps move packages from caution to safe.
+        </p>
       </section>
 
       <p id="status" class="status" hidden></p>

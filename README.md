@@ -11,10 +11,29 @@
 
 <p align="center">
   <a href="https://maximilianfeix.github.io/RemoveAndroidAI/"><b>Open the web app</b></a> ·
+  <a href="https://maximilianfeix.github.io/RemoveAndroidAI/?demo">Try the demo (no phone needed)</a> ·
   <a href="#command-line">Command line</a> ·
   <a href="#what-it-turns-off">What it turns off</a> ·
   <a href="#undo">Undo</a>
 </p>
+
+<p align="center">
+  <a href="https://github.com/maximilianfeix/RemoveAndroidAI/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/maximilianfeix/RemoveAndroidAI/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/maximilianfeix/RemoveAndroidAI/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/maximilianfeix/RemoveAndroidAI?color=36B6C5"></a>
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-83D9C3"></a>
+  <img alt="No root" src="https://img.shields.io/badge/root-not%20needed-176B58">
+</p>
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshot-scan.png" alt="The scan: every AI package on the phone with its size, tier, what stops without it, and its sources"></td>
+    <td width="50%"><img src="docs/screenshot-result.png" alt="After turning off: free space before and after, and the list of steps"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Every AI package found, with size, tier and what else stops</sub></td>
+    <td align="center"><sub>Free space measured before and after (demo mode, simulated Pixel 9)</sub></td>
+  </tr>
+</table>
 
 ---
 
@@ -161,7 +180,7 @@ Package names are checked against a strict pattern before they reach the shell, 
 
 ## Status
 
-Version 0.1. The commands and output parsing are tested against an Android 16 emulator and a simulated phone in the test suite. **It has not yet been tested on enough real phones**: reports of what was freed and what stopped working on your phone are the most useful thing you can send. Some vendor packages are marked *caution* only because nobody has verified their side effects yet.
+Version 0.2. The commands and output parsing are tested against an Android 16 emulator and a simulated phone in the test suite. **It has not yet been tested on enough real phones**: a [device report](https://github.com/maximilianfeix/RemoveAndroidAI/issues/new?template=device-report.yml) with what was freed and what stopped working on your phone is the most useful thing you can send. Some vendor packages are marked *caution* only because nobody has verified their side effects yet.
 
 Use it at your own risk. Nothing here is permanent, but a phone without a feature you relied on is annoying even when it's reversible.
 
