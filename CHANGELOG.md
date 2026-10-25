@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2026-10-25)
+
+- Web app: fix the page on GitHub Pages. The build referenced `/assets/…` instead of a relative path, so the script never loaded under `/RemoveAndroidAI/` and Connect did nothing. CI now fails if the build uses absolute asset URLs.
+
 ## 0.2.0 (2026-10-25)
 
 - Web app: demo mode at `?demo` runs the whole flow against a simulated Pixel 9, so you can see what it does without a phone.

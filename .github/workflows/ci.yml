@@ -21,5 +21,7 @@ jobs:
       - run: npm run check
       - name: README package table is current
         run: node scripts/readme-table.mjs --check
+      - name: Web build uses relative asset URLs (Pages serves it from a subpath)
+        run: "! grep -E '(src|href)=\"/' dist/web/index.html"
       - name: Committed CLI bundle is current
         run: git diff --exit-code -- dist/cli.mjs

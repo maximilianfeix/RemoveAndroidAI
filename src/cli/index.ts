@@ -9,7 +9,7 @@ import { readFreeBytes } from "../core/device.js";
 import { apply, defaultSelection, formatBytes, newJournal, scan, undo } from "../core/engine.js";
 import type { FoundPackage, Journal, PackageEntry, Shell, StepResult } from "../core/types.js";
 
-const VERSION = "0.2.0";
+const VERSION = "0.2.1";
 const catalog = catalogJson as PackageEntry[];
 const journalDir = join(homedir(), ".removeandroidai");
 

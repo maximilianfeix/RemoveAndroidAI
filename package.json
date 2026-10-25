@@ -1,6 +1,6 @@
 {
   "name": "removeandroidai",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Turn off Gemini, AICore and Galaxy AI on your Android phone and get the storage back. Every step can be undone.",
   "license": "MIT",
   "type": "module",
@@ -17,8 +17,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "vite web",
-    "build:web": "vite build web --outDir ../dist/web --emptyOutDir",
+    "dev": "vite",
+    "build:web": "vite build",
     "build:cli": "esbuild src/cli/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/cli.mjs --banner:js='#!/usr/bin/env node'",
     "build": "npm run build:cli && npm run build:web",
     "typecheck": "tsc --noEmit",

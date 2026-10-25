@@ -724,7 +724,7 @@ function formatBytes(bytes) {
 }
 
 // src/cli/index.ts
-var VERSION = "0.2.0";
+var VERSION = "0.2.1";
 var catalog = packages_default;
 var journalDir = join(homedir(), ".removeandroidai");
 var color = process.stdout.isTTY && !process.env.NO_COLOR;
