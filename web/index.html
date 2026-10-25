@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RemoveAndroidAI</title>
+    <meta name="description" content="Turn off Gemini, AICore and Galaxy AI on your Android phone from the browser and get the storage back. Every step can be undone." />
+    <meta property="og:title" content="RemoveAndroidAI" />
+    <meta property="og:description" content="Turn off on-device AI on your Android phone. Get your storage back. Every step can be undone." />
+    <meta property="og:image" content="https://maximilianfeix.github.io/RemoveAndroidAI/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <img src="./mark.svg" alt="" width="40" height="40" />
+      <span class="wordmark">RemoveAndroidAI</span>
+      <a class="gh" href="https://github.com/maximilianfeix/RemoveAndroidAI">GitHub</a>
+    </header>
+
+    <main>
+      <section data-step="start">
+        <h1>Turn off on-device AI.<br />Get your storage back.</h1>
+        <p class="lead">
+          Gemini, AICore and Galaxy AI can take <b>up to 7 GB</b> on a phone. This page turns them off over USB,
+          right from your browser. Nothing is installed and nothing is uploaded. Every step can be undone.
+        </p>
+
+        <ol class="steps">
+          <li>
+            <b>Turn on USB debugging.</b>
+            <details>
+              <summary>How?</summary>
+              Settings → About phone → tap <i>Build number</i> 7 times. Then Settings → System → Developer options →
+              turn on <i>USB debugging</i>. On Samsung, Build number is under About phone → Software information.
+            </details>
+          </li>
+          <li><b>Plug the phone into this computer</b> with a USB cable.</li>
+          <li><b>Click Connect</b>, pick your phone, then tap <i>Allow</i> on the phone.</li>
+        </ol>
+
+        <button id="connect" class="primary">Connect phone</button>
+        <p id="no-webusb" class="status error" hidden>
+          This browser can't talk to USB devices. Use Chrome, Edge, Brave or Opera on a computer, or the
+          command-line version: <code>npx github:maximilianfeix/RemoveAndroidAI</code>
+        </p>
+        <p class="fine">
+          Works on Android 10 and later. Nothing is uninstalled: apps are switched off with Android's own
+          <code>pm disable-user</code>, so you can turn them back on here or in Settings → Apps.
+        </p>
+      </section>
+
+      <section data-step="scan" hidden>
+        <h2>Found on your phone</h2>
+        <p id="device" class="device"></p>
+        <p class="legend">
+          <span class="badge safe">safe</span> only AI features stop
+          <span class="badge caution">caution</span> other features stop too
+          <span class="badge never">never</span> listed but never touched
+        </p>
+        <ul id="packages" class="packages"></ul>
+        <div class="actions">
+          <button id="apply" class="primary" disabled>Select something to turn off</button>
+          <button id="undo-saved" class="secondary" hidden>Undo last run</button>
+          <label class="secondary file">Undo from file<input id="undo-file" type="file" accept="application/json" hidden /></label>
+        </div>
+      </section>
+
+      <section data-step="result" hidden>
+        <h2 id="result-title"></h2>
+        <p id="result-space" class="space"></p>
+        <ul id="log" class="log"></ul>
+        <div class="actions">
+          <a id="download-undo" class="secondary" hidden>Download undo file</a>
+          <button id="rescan" class="secondary">Back to the list</button>
+        </div>
+      </section>
+
+      <p id="status" class="status" hidden></p>
+    </main>
+
+    <footer>
+      Open source (MIT). Package list cross-checked with
+      <a href="https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation">UAD-ng</a>.
+      Not affiliated with Google, Samsung or any phone maker.
+    </footer>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

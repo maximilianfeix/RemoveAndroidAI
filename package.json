@@ -1,0 +1,54 @@
+{
+  "name": "removeandroidai",
+  "version": "0.1.0",
+  "description": "Turn off Gemini, AICore and Galaxy AI on your Android phone and get the storage back. Every step can be undone.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "removeandroidai": "dist/cli.mjs"
+  },
+  "files": [
+    "dist/cli.mjs",
+    "data/packages.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite web",
+    "build:web": "vite build web --outDir ../dist/web --emptyOutDir",
+    "build:cli": "esbuild src/cli/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/cli.mjs --banner:js='#!/usr/bin/env node'",
+    "build": "npm run build:cli && npm run build:web",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilianfeix/RemoveAndroidAI.git"
+  },
+  "keywords": [
+    "android",
+    "adb",
+    "debloat",
+    "gemini",
+    "aicore",
+    "galaxy-ai",
+    "privacy",
+    "storage"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/w3c-web-usb": "^1.0.14",
+    "@yume-chan/adb": "^2.6.4",
+    "@yume-chan/adb-credential-web": "^2.1.0",
+    "@yume-chan/adb-daemon-webusb": "^2.3.2",
+    "@yume-chan/stream-extra": "^2.6.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

@@ -1,0 +1,554 @@
+[
+  {
+    "vendor": "google",
+    "package": "com.google.android.aicore",
+    "label": "Android AICore (Gemini Nano)",
+    "what": "Runs Gemini Nano on the phone. Its downloaded model takes about 1 GB on Samsung and up to 7 GB on Pixel, 11-12 GB while a model update is in progress.",
+    "tier": "safe",
+    "uad": "Advanced",
+    "breaks": "AI features only: Pixel Screenshots, Magic Compose rephrasing, Recorder summaries, Pixel Journal suggestions, apps using on-device Gemini Nano. The Gemini app keeps working.",
+    "clearData": true,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.google.android.aicore",
+      "https://support.google.com/android/answer/17065362",
+      "https://www.techadvisor.com/article/3094321/how-to-free-up-to-7gb-on-your-pixel-phone.html",
+      "https://www.androidauthority.com/disable-aicore-samsung-3635371/",
+      "https://sysapps.bayton.org/packages/com.google.android.aicore"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.google.android.apps.bard",
+    "label": "Google Gemini",
+    "what": "The Gemini assistant app.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "The Gemini app and Gemini as assistant.",
+    "clearData": true,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.google.android.apps.bard",
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.google.android.apps.googleassistant",
+    "label": "Google Assistant",
+    "what": "Assistant app entry point.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "The Assistant shortcut.",
+    "clearData": false,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.google.android.apps.googleassistant",
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.android.hotwordenrollment.okgoogle",
+    "label": "\"OK Google\" hotword",
+    "what": "Always-listening hotword detection.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Voice hotword.",
+    "clearData": false,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.android.hotwordenrollment.xgoogle",
+    "label": "\"Hey Google\" hotword",
+    "what": "Always-listening hotword detection.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Voice hotword.",
+    "clearData": false,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.google.android.apps.aiwallpapers",
+    "label": "AI Wallpapers",
+    "what": "Generative wallpapers.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Creating AI wallpapers.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.google.android.apps.pixel.creativeassistant",
+    "label": "Pixel Studio",
+    "what": "AI image generation.",
+    "tier": "safe",
+    "uad": "Advanced",
+    "breaks": "Pixel Studio.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.google.android.apps.pixel.agent",
+    "label": "Pixel Screenshots",
+    "what": "AI screenshot search app (Pixel 9 and later).",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Pixel Screenshots. Not in UAD-ng's list; other side effects are unverified.",
+    "clearData": true,
+    "sources": [
+      "https://sysapps.bayton.org/packages/com.google.android.apps.pixel.agent",
+      "https://support.google.com/pixelphone/answer/15312581"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.google.android.as",
+    "label": "Android System Intelligence",
+    "what": "On-device machine learning for many system features, not only AI.",
+    "tier": "caution",
+    "uad": "Recommended",
+    "breaks": "Live Caption, smart text selection, app predictions in the launcher, notification smart actions, Screen Attention, smart replies, keyboard suggestions.",
+    "clearData": false,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.google.android.as",
+      "https://milaq.net/android-bloatware",
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.google.android.as.oss",
+    "label": "Private Compute Services",
+    "what": "Privacy bridge that Android System Intelligence and AICore use to reach the network.",
+    "tier": "caution",
+    "uad": "Recommended",
+    "breaks": "Live Caption, Now Playing music recognition, smart replies.",
+    "clearData": false,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.google.android.as.oss",
+      "https://github.com/google/private-compute-services"
+    ]
+  },
+  {
+    "vendor": "google",
+    "package": "com.android.settings.intelligence",
+    "label": "Settings Suggestions (not AI)",
+    "what": "Settings search. Listed so it is never turned off by mistake.",
+    "tier": "never",
+    "uad": "Expert",
+    "breaks": "Settings crashes when you search.",
+    "clearData": false,
+    "sources": [
+      "https://gitlab.com/W1nst0n/universal-android-debloater/-/issues/51"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.bixby.agent",
+    "label": "Bixby Voice",
+    "what": "Bixby assistant.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Bixby.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json",
+      "https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.bixby.wakeup",
+    "label": "Bixby voice wake-up",
+    "what": "Bixby hotword.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Bixby wake word.",
+    "clearData": false,
+    "sources": [
+      "https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.visionintelligence",
+    "label": "Bixby Vision",
+    "what": "Camera object recognition.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Bixby Vision.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.bixbyvision.framework",
+    "label": "Bixby Vision Framework",
+    "what": "Bixby Vision backend.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Bixby Vision.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.app.sketchbook",
+    "label": "Drawing Assist",
+    "what": "AI drawing extension.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Drawing Assist.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.app.interpreter",
+    "label": "Interpreter",
+    "what": "Live translation app.",
+    "tier": "safe",
+    "uad": "Advanced",
+    "breaks": "Interpreter and live translation.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/itxjobe/samsungdebloat/blob/main/04-optional-removals.txt",
+      "https://github.com/Willie169/Samsung-Android-Debloat-List"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.aicore",
+    "label": "Samsung AI Core",
+    "what": "Galaxy AI engine.",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Reportedly Photo Assist, Note Assist and Writing Assist. One user removed it without problems, another list says keep it. Unverified.",
+    "clearData": true,
+    "sources": [
+      "https://sysapps.bayton.org/packages/com.samsung.android.aicore",
+      "https://github.com/itxjobe/samsungdebloat/blob/main/06-oneui8-specific.txt",
+      "https://github.com/Willie169/Samsung-Android-Debloat-List/blob/main/raw.txt"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.offline.languagemodel",
+    "label": "Samsung Language Core",
+    "what": "Offline language model, up to about 3 GB.",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Offline Galaxy AI language features; Samsung Keyboard may use it. Exact scope unverified.",
+    "clearData": true,
+    "sources": [
+      "https://sysapps.bayton.org/packages/com.samsung.android.offline.languagemodel"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.vision.model",
+    "label": "Samsung Vision Model",
+    "what": "Vision model files for Galaxy AI, up to about 1.6 GB.",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Vision AI features. Unverified.",
+    "clearData": true,
+    "sources": [
+      "https://sysapps.bayton.org/packages/com.samsung.android.vision.model",
+      "https://github.com/itxjobe/samsungdebloat/blob/main/08-z-fold8.txt"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.intellivoiceservice",
+    "label": "Samsung Intelligence Voice Services",
+    "what": "Bridge to Galaxy AI speech and language services.",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Live Translate and speech recognition.",
+    "clearData": true,
+    "sources": [
+      "https://sysapps.bayton.org/packages/com.samsung.android.intellivoiceservice",
+      "https://github.com/itxjobe/samsungdebloat/blob/main/package-reference.md"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.visual.cloudcore",
+    "label": "Samsung Visual Cloud Core",
+    "what": "Sends generative image edits to the cloud.",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Cloud generative photo edits. Unverified.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Willie169/Samsung-Android-Debloat-List/blob/main/raw.txt"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.photoremasterservice",
+    "label": "Photo Remaster",
+    "what": "AI photo enhancement.",
+    "tier": "caution",
+    "uad": "Advanced",
+    "breaks": "Gallery Photo Remaster.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.smartsuggestions",
+    "label": "Smart suggestions / Now Brief",
+    "what": "Now Brief, content capture and autofill suggestions.",
+    "tier": "caution",
+    "uad": "Recommended",
+    "breaks": "Now Brief and autofill suggestions.",
+    "clearData": false,
+    "sources": [
+      "https://github.com/itxjobe/samsungdebloat/blob/main/CHANGELOG.md"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.scs",
+    "label": "Samsung Core Services",
+    "what": "Search and text/image extraction engine.",
+    "tier": "caution",
+    "uad": "Advanced",
+    "breaks": "Search and text extraction in Camera, Gallery, Messages, Contacts, Settings and Finder.",
+    "clearData": false,
+    "sources": [
+      "https://sysapps.bayton.org/packages/com.samsung.android.scs"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.callassistant",
+    "label": "Call Assistant",
+    "what": "Call screening and call AI.",
+    "tier": "never",
+    "uad": "Expert",
+    "breaks": "UAD-ng: can break things on One UI 6.1 and later.",
+    "clearData": false,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "samsung",
+    "package": "com.samsung.android.honeyboard",
+    "label": "Samsung Keyboard (hosts Writing Assist)",
+    "what": "The system keyboard.",
+    "tier": "never",
+    "uad": "Expert",
+    "breaks": "You can get stuck at the lock screen without another keyboard that works before unlock.",
+    "clearData": false,
+    "sources": [
+      "https://developer.android.com/training/articles/direct-boot",
+      "https://github.com/itxjobe/samsungdebloat/blob/main/package-reference.md"
+    ]
+  },
+  {
+    "vendor": "xiaomi",
+    "package": "com.miui.voiceassist",
+    "label": "Mi AI (XiaoAi)",
+    "what": "Voice assistant.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Mi AI.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "xiaomi",
+    "package": "com.xiaomi.mibrain.speech",
+    "label": "Mi AI speech engine",
+    "what": "Speech engine for Mi AI.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Mi AI voice.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "xiaomi",
+    "package": "com.xiaomi.aiasst.service",
+    "label": "AI call assistant",
+    "what": "AI features in calls.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "AI call settings.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "xiaomi",
+    "package": "com.xiaomi.aicr",
+    "label": "HyperAI Engine",
+    "what": "HyperOS AI engine.",
+    "tier": "caution",
+    "uad": "Advanced",
+    "breaks": "May break setting wallpapers (UAD-ng issue #1110).",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/issues/1110",
+      "https://sysapps.bayton.org/packages/com.xiaomi.aicr"
+    ]
+  },
+  {
+    "vendor": "xiaomi",
+    "package": "com.xiaomi.aiservice",
+    "label": "Xiaomi AI inference engine",
+    "what": "On-device models for OCR and translation, downloaded silently.",
+    "tier": "caution",
+    "uad": "Advanced",
+    "breaks": "HyperOS AI features such as OCR and translation.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "xiaomi",
+    "package": "com.xiaomi.cameramind",
+    "label": "Camera AI core",
+    "what": "AI features of the stock camera.",
+    "tier": "caution",
+    "uad": "Advanced",
+    "breaks": "Stock camera AI features; the camera app depends on it.",
+    "clearData": false,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "motorola",
+    "package": "com.motorola.aiservices",
+    "label": "Moto AI Services",
+    "what": "Supplies AI models to Motorola apps.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Moto AI model features.",
+    "clearData": true,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.motorola.aiservices"
+    ]
+  },
+  {
+    "vendor": "motorola",
+    "package": "com.motorola.uxcore",
+    "label": "Moto AI",
+    "what": "Moto AI hub app.",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Moto AI features. Side effects unverified.",
+    "clearData": true,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.motorola.uxcore",
+      "https://www.androidcentral.com/apps-software/motorola-moto-ai"
+    ]
+  },
+  {
+    "vendor": "motorola",
+    "package": "com.motorola.aicore",
+    "label": "Moto AI Core",
+    "what": "Supplies AI models to Motorola apps.",
+    "tier": "caution",
+    "uad": "absent",
+    "breaks": "Unverified.",
+    "clearData": true,
+    "sources": [
+      "https://play.google.com/store/apps/details?id=com.motorola.aicore"
+    ]
+  },
+  {
+    "vendor": "oplus",
+    "package": "com.oplus.aiwriter",
+    "label": "AI Writer",
+    "what": "AI text generation pop-up.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "AI Writer.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "oplus",
+    "package": "com.heytap.speechassist",
+    "label": "Breeno Voice",
+    "what": "Voice assistant.",
+    "tier": "safe",
+    "uad": "Recommended",
+    "breaks": "Breeno.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "oplus",
+    "package": "com.oplus.aiunit",
+    "label": "AIUnit",
+    "what": "ColorOS AI system service.",
+    "tier": "caution",
+    "uad": "Advanced",
+    "breaks": "Smart Cutout, AI Editor and gallery AI.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "oplus",
+    "package": "com.oplus.aimemory",
+    "label": "Mind Space",
+    "what": "AI save and summarize.",
+    "tier": "caution",
+    "uad": "Advanced",
+    "breaks": "Mind Space.",
+    "clearData": true,
+    "sources": [
+      "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json"
+    ]
+  },
+  {
+    "vendor": "oplus",
+    "package": "com.aiunit.aon",
+    "label": "AON Service",
+    "what": "Sensor features, not only AI.",
+    "tier": "never",
+    "uad": "Expert",
+    "breaks": "Smart rotation, smart always-on display, privacy protection.",
+    "clearData": false,
+    "sources": [
+      "https://community.oppo.com/thread/1446120575440257025"
+    ]
+  }
+]
