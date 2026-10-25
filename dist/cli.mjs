@@ -168,13 +168,14 @@ var packages_default = [
     package: "com.samsung.android.bixby.agent",
     label: "Bixby Voice",
     what: "Bixby assistant.",
-    tier: "safe",
+    tier: "caution",
     uad: "Recommended",
-    breaks: "Bixby.",
+    breaks: "Bixby. One report from a Galaxy S25 of a 25% CPU loop after disabling Bixby; unverified, so it is opt-in.",
     clearData: true,
     sources: [
       "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json",
-      "https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt"
+      "https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt",
+      "https://www.reddit.com/r/GalaxyS25/comments/1uvm6ju/"
     ]
   },
   {

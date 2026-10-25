@@ -119,7 +119,7 @@ Google packages are checked on every phone; vendor packages only on that vendor'
 
 | Package | What | Tier | Stops | Sources |
 |---|---|---|---|---|
-| `com.samsung.android.bixby.agent`<br>Bixby Voice | Bixby assistant. | **safe** (UAD-ng: Recommended) | Bixby. | [1](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json) [2](https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt) |
+| `com.samsung.android.bixby.agent`<br>Bixby Voice | Bixby assistant. | **caution** (UAD-ng: Recommended) | Bixby. One report from a Galaxy S25 of a 25% CPU loop after disabling Bixby; unverified, so it is opt-in. | [1](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json) [2](https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt) [3](https://www.reddit.com/r/GalaxyS25/comments/1uvm6ju/) |
 | `com.samsung.android.bixby.wakeup`<br>Bixby voice wake-up | Bixby hotword. | **safe** (UAD-ng: Recommended) | Bixby wake word. | [1](https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt) |
 | `com.samsung.android.visionintelligence`<br>Bixby Vision | Camera object recognition. | **safe** (UAD-ng: Recommended) | Bixby Vision. | [1](https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt) |
 | `com.samsung.android.bixbyvision.framework`<br>Bixby Vision Framework | Bixby Vision backend. | **safe** (UAD-ng: Recommended) | Bixby Vision. | [1](https://github.com/khlam/debloat-samsung-android/blob/master/commands.txt) |

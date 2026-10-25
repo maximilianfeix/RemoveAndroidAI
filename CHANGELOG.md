@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Catalog: Bixby Voice (`com.samsung.android.bixby.agent`) moved from safe to caution after a report of a CPU loop on a Galaxy S25.
+
 ## 0.2.1 (2026-10-25)
 
 - Web app: fix the page on GitHub Pages. The build referenced `/assets/…` instead of a relative path, so the script never loaded under `/RemoveAndroidAI/` and Connect did nothing. CI now fails if the build uses absolute asset URLs.
