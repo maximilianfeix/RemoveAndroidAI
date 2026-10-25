@@ -182,7 +182,11 @@ async function main() {
   const d = s.device;
   console.log(`${bold(`${d.manufacturer} ${d.model}`)}  Android ${d.release} (SDK ${d.sdk})  free: ${formatBytes(s.freeBytes)}\n`);
   printScan(s.found, new Set(selection.map((f) => f.entry.package)));
-  if (selection.length === 0) return;
+  if (selection.length === 0) {
+    if (s.found.some((f) => f.state === "enabled" && f.entry.tier === "caution"))
+      console.log(`\nNothing is pre-selected. Add ${bold("--include-caution")} to turn off the caution ones too.`);
+    return;
+  }
 
   if (!values.apply) {
     console.log(`\nNothing changed. Run again with ${bold("--apply")} to turn these off.`);
